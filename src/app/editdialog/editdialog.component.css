@@ -1,0 +1,17 @@
+.butoon1 {
+    border: none;
+    background: linear-gradient(to right, rgb(236, 72, 140), rgb(240, 54, 82));
+    font-weight: 600;
+    color: white;
+    opacity: 0.85;
+}
+
+.butoon1:hover {
+    opacity: 1;
+    color: white;
+    box-shadow: 0px 0px 0px 2px rgb(216, 212, 212);
+}
+
+.butoon1:active {
+    opacity: 0.8;
+}

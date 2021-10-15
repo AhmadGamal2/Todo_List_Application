@@ -1,0 +1,29 @@
+<section class="head_sec">
+    <h1>Todos</h1>
+</section>
+<div class="container todo_container">
+    <div class="parent1 p-4 rounded shadow-sm">
+        <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+            <h5 class="mx-2">New Todo</h5>
+            <div class="input-group  mt-3" style="margin: 0;">
+                <input ngModel name="task" #todoText="ngModel" minlength="2" required type="text" class="form-control mx-2 rounded" placeholder="type your todo here">
+                <button type="submit" class="btn rounded  butoon1"><span style="font-size: 20px; font-weight: 700;">+</span> Add</button>
+            </div>
+            <div *ngIf="todoText.invalid && showValidationErrors">
+                <p class="text-danger mx-2" *ngIf="todoText.errors?.required">Please Enter Your Todo</p>
+                <p class="text-danger mx-2 " *ngIf="todoText.errors?.minlength">Todo text must be at least 2 characters</p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container">
+    <div class="todo_item" (click)="onTodoClicked(todo)" *ngFor="let todo of todos;" [class.completed]="todo.completed">
+        <div class="check"><i class="material-icons">check</i></div>
+        <div class="todo_text">{{todo.task}}</div>
+        <div class="control_box" (click)="$event.stopPropagation()">
+            <div class="control_button edit" (click)="onEdit(todo)"><i class="material-icons">edit</i></div>
+            <div class="control_button delete" (click)="onDelete(todo)"><i class="material-icons">delete</i></div>
+        </div>
+    </div>
+</div>

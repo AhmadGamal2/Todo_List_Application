@@ -1,0 +1,167 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.head_sec {
+    background: linear-gradient(to right, rgb(2, 228, 171), rgb(74, 215, 240));
+    padding: 100px;
+    padding-bottom: 150px;
+}
+
+.head_sec h1 {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    text-shadow: 0px 1px 2px rgb(black, 0.12);
+}
+
+.container {
+    max-width: 800px;
+}
+
+.todo_container {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.parent1 {
+    background-color: white;
+    margin-top: -70px;
+    margin-bottom: 10px;
+    padding-right: 33px !important;
+}
+
+.butoon1 {
+    border: none;
+    background: linear-gradient(to right, rgb(236, 72, 140), rgb(240, 54, 82));
+    font-weight: 600;
+    color: white;
+    opacity: 0.85;
+}
+
+.butoon1:hover {
+    opacity: 1;
+    color: white;
+    box-shadow: 0px 0px 0px 2px rgb(216, 212, 212);
+}
+
+.butoon1:active {
+    opacity: 0.8;
+}
+
+.todo_item {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding: 30px 15px;
+    border-bottom: 1px solid #e9eaec;
+    cursor: pointer;
+    position: relative;
+}
+
+.todo_item.completed {
+    color: #aaa;
+}
+
+.todo_item .check {
+    border: 2px solid #eee;
+    border-radius: 50%;
+    height: 28px;
+    width: 28px;
+    display: flex;
+    flex-shrink: 0;
+    margin-right: 20px;
+    transition: background-color 0.2s border-color 0.2s;
+}
+
+.todo_item .check .material-icons {
+    font-size: 20px;
+    margin: auto;
+    opacity: 0;
+    transition: opacity 0.2s;
+    color: #333;
+}
+
+:hover .check {
+    background-color: #eee;
+}
+
+:hover .check .material-icons {
+    opacity: .28;
+}
+
+.todo_item.completed .check {
+    background-color: rgb(11, 223, 170);
+    border-color: rgb(11, 223, 170);
+}
+
+.todo_item.completed .check .material-icons {
+    opacity: 1;
+}
+
+.todo_item .control_box {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(3px);
+    transition: visibility 0.2s, opacity 0.2s, transform 0.2s;
+}
+
+.todo_item:hover .control_box {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1s;
+}
+
+.control_box .control_button {
+    background-color: #f5f7f8;
+    padding: 7px 10px;
+    display: flex;
+    border: none;
+}
+
+.control_box .control_button:hover {
+    background: #eee;
+}
+
+.control_box .control_button:active {
+    background: #e5e7e8;
+}
+
+.control_box .edit {
+    border-top-left-radius: 5px;
+}
+
+.control_box .delete {
+    border-top-right-radius: 5px;
+}
+
+.control_box .control_button .material-icons {
+    font-size: 20px;
+    color: #555;
+}
+
+.control_box:hover .control_button .material-icons {
+    color: #333;
+}
+
+.control_box .control_button.delete:hover .material-icons {
+    color: rgb(155, 27, 27);
+}
+
+.control_box .control_button.delete:active .material-icons {
+    color: rgb(218, 35, 35);
+}
+
+.control_box .control_button.edit:hover .material-icons {
+    color: rgb(19, 149, 158);
+}
+
+.control_box .control_button.edit:active .material-icons {
+    color: rgb(59, 211, 238);
+}

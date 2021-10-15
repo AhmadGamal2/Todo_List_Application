@@ -1,0 +1,26 @@
+<div mat-dialog-content>
+    <form #form="ngForm" (ngSubmit)="onFormSubmit(form)" class="position-relative">
+        <div class="form-group mb-5">
+            <h5>Edit Todo</h5>
+            <div class="input-group mt-3 ">
+                <input type="text" class="form-control rounded " [ngModel]="todo.task" #todoTextField="ngModel" required minlength="2" name="task" placeholder="Type todo text here...">
+            </div>
+
+            <div *ngIf="todoTextField.invalid">
+                <p class="text-danger" *ngIf="todoTextField.errors?.required">Please enter the text of your todo</p>
+                <p class="text-danger" *ngIf="todoTextField.errors?.minlength">Todo text must be at least 2 characters</p>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="btn-toolbar position-absolute bottom-0 end-0" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mx-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-light" (click)="close()">Cancel</button>
+            </div>
+            <div class="btn-group" role="group" aria-label="Second group">
+                <button type="submit" class="btn butoon1" style="display: flex;"><i style="margin:auto; margin-right:4px;" class="material-icons">save</i>Save</button>
+            </div>
+        </div>
+    </form>
+</div>
